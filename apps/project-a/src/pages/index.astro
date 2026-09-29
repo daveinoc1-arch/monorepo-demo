@@ -1,0 +1,56 @@
+---
+import { Button, Header, Card } from "@conexiant/ui";
+import Layout from "../layouts/Layout.astro";
+
+const services = [
+    {
+        title: "Web Development",
+        description: "We build modern websites and applications.",
+        url: "/web-development",
+    },
+    {
+        title: "UI Design",
+        description: "We create reusable and consistent UI systems.",
+        url: "/ui-design",
+    },
+    {
+        title: "SEO",
+        description: "We build search-friendly websites.",
+        url: "/seo",
+    },
+];
+---
+
+<Layout>
+    <Header />
+
+    <main>
+        <section>
+            <h1>Project A</h1>
+
+            <Button text="Learn More" url="/about" />
+        </section>
+
+        <section>
+            <h2>Services</h2>
+
+            <div class="services">
+                {services.map((service) => (
+                    <Card
+                        title={service.title}
+                        description={service.description}
+                        url={service.url}
+                    />
+                ))}
+            </div>
+        </section>
+    </main>
+</Layout>
+
+<style>
+    .services {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1.5rem;
+    }
+</style>
