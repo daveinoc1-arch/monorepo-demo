@@ -1,0 +1,48 @@
+---
+interface Props {
+    title: string;
+    description: string;
+    url: string;
+}
+
+const { title, description, url } = Astro.props;
+---
+
+<article class="card">
+    <div class="card__content">
+        <h2 class="card__title">{title}</h2>
+
+        <p class="card__description">{description}</p>
+
+        <a href={url} class="card__link">
+            Learn More
+        </a>
+    </div>
+</article>
+
+<style>
+    .card {
+        max-width: 400px;
+        padding: 24px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+    }
+
+    .card__content {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .card__title {
+        margin: 0;
+    }
+
+    .card__description {
+        margin: 0;
+    }
+
+    .card__link {
+        align-self: flex-start;
+    }
+</style>

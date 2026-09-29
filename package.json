@@ -1,0 +1,27 @@
+{
+    "name": "monorepo",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "dev:project-a": "pnpm --filter project-a dev",
+        "build:project-a": "pnpm --filter project-a build",
+        "dev:project-b": "pnpm --filter project-b dev"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devEngines": {
+        "packageManager": {
+            "name": "pnpm",
+            "version": "12.6.0",
+            "onFail": "download"
+        }
+    },
+    "packageManager": "pnpm@12.6.0",
+    "type": "module",
+    "devDependencies": {
+        "prettier": "^3.9.9",
+        "prettier-plugin-astro": "^1.1.0"
+    }
+}

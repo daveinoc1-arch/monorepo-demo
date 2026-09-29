@@ -1,0 +1,38 @@
+---
+interface Props {
+    text: string;
+    url: string;
+    variant?: "primary" | "secondary" | "outline";
+}
+
+const { text, url, variant = "primary" } = Astro.props;
+---
+
+<a href={url} class={`button button--${variant}`}>
+    {text}
+</a>
+
+<style>
+    .button {
+        display: inline-block;
+        padding: var(--space-3) var(--space-5);
+        border-radius: var(--radius-sm);
+        text-decoration: none;
+    }
+
+    .button--primary {
+        background: var(--color-primary);
+        color: #ffffff;
+    }
+
+    .button--secondary {
+        background: gray;
+        color: white;
+    }
+
+    .button--outline {
+        background: transparent;
+        color: black;
+        border: 1px solid black;
+    }
+</style>
